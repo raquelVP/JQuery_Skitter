@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Rosario' rel='stylesheet' type='text/css'>
+  
+    <link href="css/styles.css" type="text/css" media="all" rel="stylesheet" />
+    <link href="css/skitter.styles.css" type="text/css" media="all" rel="stylesheet" />
+    <link href="css/skitter.styles.css" type="text/css" media="all" rel="stylesheet" />
+    <link href="css/highlight.black.css" type="text/css" media="all" rel="stylesheet" />
+    <link href="css/sexy-bookmarks-style.css" type="text/css" media="all" rel="stylesheet" />
+
+    <script src="js/jquery-1.6.3.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.animate-colors-min.js"></script>
+    
+    <script src="js/jquery.skitter.min.js"></script>
+    <script src="js/highlight.js"></script>
+    <script src="js/sexy-bookmarks-public.js"></script>
+
+    <title>Tipos de Slideshow</title>
+
+    <h1>JQuery Plugin: Skitter</h1>
+    
+    <script>
+      $(document).ready(function() {
+    
+        var options = {};
+  
+        if (document.location.search) {
+          var array = document.location.search.split('=');
+          var param = array[0].replace('?', '');
+          var value = array[1];
+          
+          if (param == 'animation') {
+            options.animation = value;
+          }
+          else if (param == 'type_navigation') {
+            if (value == 'dots_preview') {
+              $('.border_box').css({'marginBottom': '40px'});
+              options['dots'] = true;
+              options['preview'] = true;
+            }
+            else {
+              options[value] = true;
+              if (value == 'dots') $('.border_box').css({'marginBottom': '40px'});
+            }
+          }
+        }
+        $('.box_skitter_large').skitter(options);
+    
+        // Highlight
+        $('pre.code').highlight({source:1, zebra:1, indent:'space', list:'ol'});
+      }
+    );
+  </script>
+
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+      </div>
+      <div id="content">
+        <div class="border_box">
+          <div class="box_skitter box_skitter_large">
+            <ul>
+              <li><a href="#cube"><img src="images/001.jpg" class="cube" /></a><div class="label_text"><p>cube</p></div></li>
+              <li><a href="#cubeRandom"><img src="images/002.jpg" class="cubeRandom" /></a><div class="label_text"><p>cubeRandom</p></div></li>
+              <li><a href="#block"><img src="images/003.jpg" class="block" /></a><div class="label_text"><p>block</p></div></li>
+              <li><a href="#cubeStop"><img src="images/004.jpg" class="cubeStop" /></a><div class="label_text"><p>cubeStop</p></div></li>
+              <li><a href="#cubeHide"><img src="images/005.jpg" class="cubeHide" /></a><div class="label_text"><p>cubeHide</p></div></li>
+              <li><a href="#cubeSize"><img src="images/006.jpg" class="cubeSize" /></a><div class="label_text"><p>cubeSize</p></div></li>
+              <li><a href="#horizontal"><img src="images/007.jpg" class="horizontal" /></a><div class="label_text"><p>horizontal</p></div></li>
+              <li><a href="#showBars"><img src="images/008.jpg" class="showBars" /></a><div class="label_text"><p>showBars</p></div></li>
+              <li><a href="#showBarsRandom"><img src="images/009.jpg" class="showBarsRandom" /></a><div class="label_text"><p>showBarsRandom</p></div></li>
+              <li><a href="#tube"><img src="images/010.jpg" class="tube" /></a><div class="label_text"><p>tube</p></div></li>
+              <li><a href="#fade"><img src="images/011.jpg" class="fade" /></a><div class="label_text"><p>fade</p></div></li>
+              <li><a href="#fadeFour"><img src="images/012.jpg" class="fadeFour" /></a><div class="label_text"><p>fadeFour</p></div></li>
+              <li><a href="#paralell"><img src="images/013.jpg" class="paralell" /></a><div class="label_text"><p>paralell</p></div></li>
+              <li><a href="#blind"><img src="images/014.jpg" class="blind" /></a><div class="label_text"><p>blind</p></div></li>
+              <li><a href="#blindHeight"><img src="images/015.jpg" class="blindHeight" /></a><div class="label_text"><p>blindHeight</p></div></li>
+              <li><a href="#blindWidth"><img src="images/016.jpg" class="blindWidth" /></a><div class="label_text"><p>blindWidth</p></div></li>
+              <li><a href="#directionTop"><img src="images/017.jpg" class="directionTop" /></a><div class="label_text"><p>directionTop</p></div></li>
+              <li><a href="#directionBottom"><img src="images/018.jpg" class="directionBottom" /></a><div class="label_text"><p>directionBottom</p></div></li>
+              <li><a href="#directionRight"><img src="images/019.jpg" class="directionRight" /></a><div class="label_text"><p>directionRight</p></div></li>
+              <li><a href="#directionLeft"><img src="images/020.jpg" class="directionLeft" /></a><div class="label_text"><p>directionLeft</p></div></li>
+              <li><a href="#cubeStopRandom"><img src="images/021.jpg" class="cubeStopRandom" /></a><div class="label_text"><p>cubeStopRandom</p></div></li>
+              <li><a href="#cubeSpread"><img src="images/022.jpg" class="cubeSpread" /></a><div class="label_text"><p>cubeSpread</p></div></li>
+            </ul>
+          </div>
+        </div>
+        <div id="examples-animations">
+          <div>
+            <a href="?" class="selected">all</a>
+            <a href="?animation=cube" class="">cube</a>
+            <a href="?animation=cubeRandom" class="">cubeRandom</a>
+            <a href="?animation=block" class="">block</a>
+            <a href="?animation=cubeStop" class="">cubeStop</a>
+            <a href="?animation=cubeHide" class="">cubeHide</a>
+            <a href="?animation=cubeSize" class="">cubeSize</a>
+            <a href="?animation=horizontal" class="">horizontal</a>
+            <a href="?animation=showBars" class="">showBars</a>
+            <a href="?animation=showBarsRandom" class="">showBarsRandom</a>
+            <a href="?animation=tube" class="">tube</a>
+            <a href="?animation=fade" class="">fade</a>
+            <a href="?animation=fadeFour" class="">fadeFour</a>
+            <a href="?animation=paralell" class="">paralell</a>
+            <a href="?animation=blind" class="">blind</a>
+            <a href="?animation=blindHeight" class="">blindHeight</a>
+            <a href="?animation=blindWidth" class="">blindWidth</a>
+            <a href="?animation=directionTop" class="">directionTop</a>
+            <a href="?animation=directionBottom" class="">directionBottom</a>
+            <a href="?animation=directionRight" class="">directionRight</a>
+            <a href="?animation=directionLeft" class="">directionLeft</a>
+            <a href="?animation=cubeStopRandom" class="">cubeStopRandom</a>
+            <a href="?animation=cubeSpread" class="">cubeSpread</a>
+            <a href="?animation=cubeJelly" class="">cubeJelly</a>
+            <a href="?animation=glassCube" class="">glassCube</a>
+            <a href="?animation=glassBlock" class="">glassBlock</a>
+            <a href="?animation=circles" class="">circles</a>
+            <a href="?animation=circlesInside" class="">circlesInside</a>
+            <a href="?animation=circlesRotate" class="">circlesRotate</a>
+            <a href="?animation=cubeShow" class="">cubeShow<span class="new_animation">new!</span></a>
+            <a href="?animation=upBars" class="">upBars<span class="new_animation">new!</span></a>
+            <a href="?animation=downBars" class="">downBars<span class="new_animation">new!</span></a>
+            <a href="?animation=random" class="">random</a>
+            <a href="?animation=randomSmart" class="">randomSmart</a>
+          </div>
+        </div>
+        <br>
+        <div id="styles_navigation">
+          <h2>Tipo de Navegacion</h2>
+          <ul>
+            <li><a href="?type_navigation=numbers" class="selected">Numeros</a></li>
+            <li><a href="?type_navigation=thumbs" class="">Thumbs</a></li>
+            <li><a href="?type_navigation=dots" class="">Puntos</a></li>
+            <li><a href="?type_navigation=dots_preview" class="">Puntos con Vista previa</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
